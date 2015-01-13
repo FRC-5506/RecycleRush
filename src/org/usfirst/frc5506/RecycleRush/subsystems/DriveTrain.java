@@ -52,5 +52,30 @@ public class DriveTrain extends Subsystem {
     public void drive(double forwardSpeed, double turningSpeed) {
     	motors.arcadeDrive(forwardSpeed, turningSpeed);
     }
+    
+    // Autonomous drive functions
+    public void driveForward() {
+    	motors.arcadeDrive(1, 0);
+    }
+    
+    public void driveBackwards() {
+    	motors.arcadeDrive(-1, 0);
+    }
+    
+    public void hardLeftTurn() {
+    	motors.arcadeDrive(0, 1);
+    }
+    
+    public void hardRightTurn() {
+    	motors.arcadeDrive(0, -1);
+    }
+    
+    public void softLeftTurn() {
+    	motors.arcadeDrive(0, 0.5);
+    }
+    
+    public void softRightTurn() {
+    	motors.arcadeDrive(0, -0.5);
+    }
 }
 
