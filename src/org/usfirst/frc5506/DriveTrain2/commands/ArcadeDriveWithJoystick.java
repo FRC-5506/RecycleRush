@@ -39,7 +39,7 @@ public class  ArcadeDriveWithJoystick extends Command {
     protected void execute() {
     	double forwardSpeed = Robot.oi.getJoystick().getY() * -1;
     	double turningSpeed = Robot.oi.getJoystick().getX();
-    	Robot.driveTrain.getMotors().arcadeDrive(turningSpeed, forwardSpeed);
+    	Robot.driveTrain.drive(turningSpeed, forwardSpeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -54,12 +54,5 @@ public class  ArcadeDriveWithJoystick extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    }
-    
-    private void stopAllMotors() {
-    	RobotMap.driveTrainbackLeft.set(0);
-		RobotMap.driveTrainbackRight.set(0);
-		RobotMap.driveTrainfrontLeft.set(0);
-		RobotMap.driveTrainfrontRight.set(0);
     }
 }

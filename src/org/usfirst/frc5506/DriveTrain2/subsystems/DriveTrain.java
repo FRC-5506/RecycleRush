@@ -48,5 +48,9 @@ public class DriveTrain extends Subsystem {
     public RobotDrive getMotors() {
     	return motors;
     }
+    
+    public void drive(double forwardSpeed, double turningSpeed) {
+    	motors.arcadeDrive(forwardSpeed, turningSpeed);
+    }
 }
 
