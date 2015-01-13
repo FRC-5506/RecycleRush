@@ -9,12 +9,12 @@
 // it from being updated in the future.
 
 
-package org.usfirst.frc5506.DriveTrain2.subsystems;
+package org.usfirst.frc5506.RecycleRush.subsystems;
 
-import org.usfirst.frc5506.DriveTrain2.RobotMap;
-import org.usfirst.frc5506.DriveTrain2.commands.*;
+import org.usfirst.frc5506.RecycleRush.RobotMap;
+import org.usfirst.frc5506.RecycleRush.commands.*;
+
 import edu.wpi.first.wpilibj.*;
-
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
