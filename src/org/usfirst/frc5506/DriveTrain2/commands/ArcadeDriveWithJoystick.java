@@ -14,7 +14,6 @@ package org.usfirst.frc5506.DriveTrain2.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc5506.DriveTrain2.Robot;
-import org.usfirst.frc5506.DriveTrain2.RobotMap;
 
 /**
  *
