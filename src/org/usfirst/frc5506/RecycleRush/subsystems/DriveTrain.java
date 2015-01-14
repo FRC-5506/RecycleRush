@@ -77,5 +77,9 @@ public class DriveTrain extends Subsystem {
     public void softRightTurn() {
     	motors.arcadeDrive(0, -0.5);
     }
+    
+    public void stopDriving() {
+    	motors.stopMotor();
+    }
 }
 
