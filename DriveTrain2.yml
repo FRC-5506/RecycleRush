@@ -21,7 +21,7 @@ Children:
             validators: &id003 [PWMOutput]
             value: '0'
         Base: Speed Controller
-        Name: frontRight
+        Name: leftMotor
       - Children: []
         Properties:
           Type: !!robotbuilder.data.properties.ChoicesProperty
@@ -37,81 +37,33 @@ Children:
             validators: *id003
             value: '1'
         Base: Speed Controller
-        Name: frontLeft
-      - Children: []
-        Properties:
-          Type: !!robotbuilder.data.properties.ChoicesProperty
-            choices: *id001
-            default: Talon
-            name: Type
-            validators: null
-            value: Talon
-          Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
-            choices: *id002
-            default: '0'
-            name: Output Channel (PWM)
-            validators: *id003
-            value: '2'
-        Base: Speed Controller
-        Name: backRight
-      - Children: []
-        Properties:
-          Type: !!robotbuilder.data.properties.ChoicesProperty
-            choices: *id001
-            default: Talon
-            name: Type
-            validators: null
-            value: Talon
-          Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
-            choices: *id002
-            default: '0'
-            name: Output Channel (PWM)
-            validators: *id003
-            value: '3'
-        Base: Speed Controller
-        Name: backLeft
+        Name: rightMotor
       Properties:
+        Left Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {default: false,
+          name: Left Motor Inverted, validators: null, value: false}
+        Right Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {default: false,
+          name: Right Motor Inverted, validators: null, value: false}
         Sensitivity: !!robotbuilder.data.properties.DoubleProperty {default: 0.5,
           name: Sensitivity, validators: null, value: 0.5}
-        Right Front Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {
-          default: false, name: Right Front Motor Inverted, validators: null, value: false}
-        Safety Enabled: !!robotbuilder.data.properties.BooleanProperty {default: true,
-          name: Safety Enabled, validators: null, value: true}
-        Left Front Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {
-          default: false, name: Left Front Motor Inverted, validators: null, value: false}
-        Right Front Motor: !!robotbuilder.data.properties.ChildSelectionProperty
-          default: 2
-          name: Right Front Motor
+        Right Motor: !!robotbuilder.data.properties.ChildSelectionProperty
+          default: 1
+          name: Right Motor
           type: PIDOutput
-          validators: [RobotDrive4, ChildDropdownSelected]
-          value: DriveTrain frontRight
+          validators: [RobotDrive2, ChildDropdownSelected]
+          value: DriveTrain rightMotor
         Maximum Output: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Maximum Output, validators: null, value: 1.0}
-        Right Rear Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {
-          default: false, name: Right Rear Motor Inverted, validators: null, value: false}
-        Left Rear Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {
-          default: false, name: Left Rear Motor Inverted, validators: null, value: false}
-        Right Rear Motor: !!robotbuilder.data.properties.ChildSelectionProperty
-          default: 3
-          name: Right Rear Motor
-          type: PIDOutput
-          validators: [RobotDrive4, ChildDropdownSelected]
-          value: DriveTrain backRight
-        Left Rear Motor: !!robotbuilder.data.properties.ChildSelectionProperty
-          default: 1
-          name: Left Rear Motor
-          type: PIDOutput
-          validators: [RobotDrive4, ChildDropdownSelected]
-          value: DriveTrain backLeft
-        Left Front Motor: !!robotbuilder.data.properties.ChildSelectionProperty
+        Left Motor: !!robotbuilder.data.properties.ChildSelectionProperty
           default: 0
-          name: Left Front Motor
+          name: Left Motor
           type: PIDOutput
-          validators: [RobotDrive4, ChildDropdownSelected]
-          value: DriveTrain frontLeft
+          validators: [RobotDrive2, ChildDropdownSelected]
+          value: DriveTrain leftMotor
         Safety Expiration Time: !!robotbuilder.data.properties.DoubleProperty {default: 0.1,
           name: Safety Expiration Time, validators: null, value: 0.1}
-      Base: Robot Drive 4
+        Safety Enabled: !!robotbuilder.data.properties.BooleanProperty {default: true,
+          name: Safety Enabled, validators: null, value: true}
+      Base: Robot Drive 2
       Name: Motors
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
@@ -159,7 +111,7 @@ Properties:
   Autonomous Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
     name: Autonomous Command, type: Command, validators: null, value: Autonomous Command}
   Wiring File: !!robotbuilder.data.properties.FileProperty {default: '', extension: html,
-    folder: false, name: Wiring File, validators: null, value: /home/noah/wiringtable.html}
+    folder: false, name: Wiring File, validators: null, value: wiringtable.html}
   Use Default Java Package: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Use Default Java Package, validators: null, value: true}
   Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Noah\workspace',
