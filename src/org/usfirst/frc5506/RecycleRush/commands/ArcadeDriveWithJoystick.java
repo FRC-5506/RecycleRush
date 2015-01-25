@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc5506.RecycleRush.Robot;
 
 /**
- *
+ * @author Noah Howard
  */
 public class  ArcadeDriveWithJoystick extends Command {
 
