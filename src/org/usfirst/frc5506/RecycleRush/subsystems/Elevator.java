@@ -13,8 +13,9 @@ package org.usfirst.frc5506.RecycleRush.subsystems;
 
 import org.usfirst.frc5506.RecycleRush.RobotMap;
 import org.usfirst.frc5506.RecycleRush.commands.*;
-import edu.wpi.first.wpilibj.*;
 
+import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
@@ -38,5 +39,16 @@ public class Elevator extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    
+    public void elevatorUp() {
+    	leftSolenoid.set(Value.kForward);
+    	rightSolenoid.set(Value.kForward);
+    }
+    
+    public void elevatorDown() {
+    	leftSolenoid.set(Value.kReverse);
+    	rightSolenoid.set(Value.kReverse);
+    }
 }
+
 
