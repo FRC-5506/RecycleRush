@@ -27,6 +27,6 @@
   
   <import file="${wpilib.ant.dir}/build.xml"/>
 	
-  <var name="classpath" value="${classpath}:/lib/" />
+<!--  <var name="classpath" value="${classpath}:/lib/" /> -->
 
 </project> 
