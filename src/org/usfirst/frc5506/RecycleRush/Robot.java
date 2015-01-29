@@ -108,4 +108,9 @@ public class Robot extends IterativeRobot {
     public void testPeriodic() {
         LiveWindow.run();
     }
+    
+    private void openCVInit() {
+    	// Load OpenCV library on the RIO
+    	System.load("/usr/local/lib/lib_OpenCV/java/opencv_java2410.so");
+    }
 }
