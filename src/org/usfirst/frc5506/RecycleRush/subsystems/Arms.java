@@ -48,6 +48,10 @@ public class Arms extends Subsystem {
     public void moveOut() {
     	armSolenoid.set(Value.kForward);
     }
+
+	public void stop() {
+		armSolenoid.set(Value.kOff);
+	}
     
     public DigitalInput getLimitSwitch() {
     	return armWidthLimit;

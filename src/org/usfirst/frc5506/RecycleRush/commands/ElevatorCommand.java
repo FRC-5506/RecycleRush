@@ -50,10 +50,12 @@ public class  ElevatorCommand extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	// If it should be lifting, lift, else lower
-    	if(isLifting) {
+    	if(isLifting && !Robot.elevator.getLimitSwitch().get()) {
     		Robot.elevator.elevatorUp();
-    	} else {
+    	} else if(!isLifting && !Robot.elevator.getLimitSwitch().get()) {
     		Robot.elevator.elevatorDown();
+    	} else {
+    		Robot.elevator.stop();
     	}
     }
 

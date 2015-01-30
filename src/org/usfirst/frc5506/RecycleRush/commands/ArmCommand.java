@@ -48,10 +48,12 @@ public class  ArmCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(moveIn) {
+    	if(moveIn && !Robot.arms.getLimitSwitch().get()) {
     		Robot.arms.moveIn();
-    	} else {
+    	} else if (!moveIn && !Robot.arms.getLimitSwitch().get()) {
     		Robot.arms.moveOut();
+    	} else {
+    		Robot.arms.stop();
     	}
     }
 

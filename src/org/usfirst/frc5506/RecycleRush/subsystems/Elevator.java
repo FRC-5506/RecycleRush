@@ -52,6 +52,11 @@ public class Elevator extends Subsystem {
     	leftSolenoid.set(Value.kReverse);
     	rightSolenoid.set(Value.kReverse);
     }
+
+	public void stop() {
+		leftSolenoid.set(Value.kOff);
+		rightSolenoid.set(Value.kOff);
+	}
     
     public DigitalInput getLimitSwitch() {
     	return elevatorHeightLimit;
