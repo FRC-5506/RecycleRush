@@ -41,11 +41,11 @@ public class Arms extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public void armsIn() {
+    public void moveIn() {
     	armSolenoid.set(Value.kReverse);
     }
     
-    public void armsOut() {
+    public void moveOut() {
     	armSolenoid.set(Value.kForward);
     }
     
