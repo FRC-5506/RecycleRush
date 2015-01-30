@@ -18,6 +18,7 @@ import org.usfirst.frc5506.RecycleRush.Robot;
  *
  */
 public class  DriveAuto extends Command {
+	private boolean isDone = false;
 
     public DriveAuto() {
         // Use requires() here to declare subsystem dependencies
@@ -34,8 +35,10 @@ public class  DriveAuto extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	// Hopefully this will drive forward 1 rotation then stop, otherwise it's toast.
     	if(Robot.driveTrain.getWheelCount().get() == 1) {
     		Robot.driveTrain.stopDriving();
+    		isDone = true;
     	} else {
     		Robot.driveTrain.driveForward();
     	}
@@ -43,7 +46,7 @@ public class  DriveAuto extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return isDone;
     }
 
     // Called once after isFinished returns true
