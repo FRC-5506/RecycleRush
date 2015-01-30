@@ -34,8 +34,11 @@ public class  DriveAuto extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	// TODO: There should be a sequence of actions here as to how long
-    	// and how far, etc the robot should be going
+    	if(Robot.driveTrain.getWheelCount().get() == 1) {
+    		Robot.driveTrain.stopDriving();
+    	} else {
+    		Robot.driveTrain.driveForward();
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
