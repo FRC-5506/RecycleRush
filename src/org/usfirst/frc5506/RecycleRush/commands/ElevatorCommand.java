@@ -15,7 +15,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc5506.RecycleRush.Robot;
 
 /**
- *
+ * @author Noah Howard
+ * 
+ * TODO: Add sensor detection for auto functions
  */
 public class  ElevatorCommand extends Command {
 	private boolean isLifting;
