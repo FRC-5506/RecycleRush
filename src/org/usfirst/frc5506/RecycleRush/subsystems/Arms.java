@@ -42,15 +42,15 @@ public class Arms extends Subsystem {
     }
     
     public void moveIn() {
-    	armSolenoid.set(Value.kReverse);
+    	armSolenoid.set(DoubleSolenoid.Value.kReverse);
     }
     
     public void moveOut() {
-    	armSolenoid.set(Value.kForward);
+    	armSolenoid.set(DoubleSolenoid.Value.kForward);
     }
 
 	public void stop() {
-		armSolenoid.set(Value.kOff);
+		armSolenoid.set(DoubleSolenoid.Value.kOff);
 	}
     
     public DigitalInput getLimitSwitch() {

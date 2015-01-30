@@ -44,18 +44,18 @@ public class Elevator extends Subsystem {
     }
     
     public void elevatorUp() {
-    	leftSolenoid.set(Value.kForward);
-    	rightSolenoid.set(Value.kForward);
+    	leftSolenoid.set(DoubleSolenoid.Value.kForward);
+    	rightSolenoid.set(DoubleSolenoid.Value.kForward);
     }
     
     public void elevatorDown() {
-    	leftSolenoid.set(Value.kReverse);
-    	rightSolenoid.set(Value.kReverse);
+    	leftSolenoid.set(DoubleSolenoid.Value.kReverse);
+    	rightSolenoid.set(DoubleSolenoid.Value.kReverse);
     }
 
 	public void stop() {
-		leftSolenoid.set(Value.kOff);
-		rightSolenoid.set(Value.kOff);
+		leftSolenoid.set(DoubleSolenoid.Value.kOff);
+		rightSolenoid.set(DoubleSolenoid.Value.kOff);
 	}
     
     public DigitalInput getLimitSwitch() {
