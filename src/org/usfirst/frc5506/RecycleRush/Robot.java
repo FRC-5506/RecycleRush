@@ -60,7 +60,7 @@ public class Robot extends IterativeRobot {
         
         autoChooser = new SendableChooser();
         autoChooser.addDefault("Pickup gray totes", new AutonomousCommand());
-        autoChooser.addObject("Any other mode", new DriveAuto());
+        autoChooser.addObject("Cupid shuffle", new CupidShuffle());
         SmartDashboard.putData("Autonomous Mode Chooser", autoChooser);
     }
 
