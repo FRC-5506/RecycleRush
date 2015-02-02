@@ -83,6 +83,14 @@ public class DriveTrain extends Subsystem {
     	motors.stopMotor();
     }
     
+    public SpeedController getLeftMotor() {
+    	return leftMotor;
+    }
+    
+    public SpeedController getRightMotor() {
+    	return rightMotor;
+    }
+    
     public Encoder getWheelRotations() {
     	return wheelRotations;
     }
