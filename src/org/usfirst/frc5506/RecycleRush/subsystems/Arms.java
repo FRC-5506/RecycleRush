@@ -14,7 +14,6 @@ package org.usfirst.frc5506.RecycleRush.subsystems;
 import org.usfirst.frc5506.RecycleRush.RobotMap;
 
 import edu.wpi.first.wpilibj.*;
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
