@@ -332,6 +332,12 @@ Children:
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
     Name: DriveAuto
+  - Children: []
+    Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command Group
+    Name: DriveToAutoZone
   Properties: {}
   Base: Commands
   Name: Commands
