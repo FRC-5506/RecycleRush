@@ -49,19 +49,16 @@ public class  ElevatorCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	// If it should be lifting, lift, else lower
-    	if(isLifting && !Robot.elevator.getLimitSwitch().get()) {
+    	if(isLifting) {
     		Robot.elevator.elevatorUp();
-    	} else if(!isLifting && !Robot.elevator.getLimitSwitch().get()) {
-    		Robot.elevator.elevatorDown();
     	} else {
-    		Robot.elevator.stop();
+    		Robot.elevator.elevatorDown();
     	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+    	return Robot.elevator.getLimitSwitch().get();
     }
 
     // Called once after isFinished returns true
