@@ -36,8 +36,8 @@ public class  ArcadeDriveWithJoystick extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double forwardSpeed = Robot.oi.getJoystick().getY() * -1;
-    	double turningSpeed = Robot.oi.getJoystick().getX();
+    	double forwardSpeed = Robot.oi.getDriverJoystick().getY() * -1;
+    	double turningSpeed = Robot.oi.getDriverJoystick().getX();
     	Robot.driveTrain.drive(turningSpeed, forwardSpeed);
     }
 
