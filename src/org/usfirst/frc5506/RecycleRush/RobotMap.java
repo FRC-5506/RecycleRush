@@ -29,7 +29,7 @@ public class RobotMap {
     public static RobotDrive driveTrainMotors;
     public static Encoder driveTrainwheelRotations;
     public static Gyro driveTraingyro;
-    public static Ultrasonic driveTrainrangeFinder;
+    public static AnalogInput driveTrainrangeFinder;
     public static DoubleSolenoid armsarmSolenoid;
     public static DigitalInput armsarmWidthLimit;
     public static DoubleSolenoid elevatorleftSolenoid;
@@ -61,7 +61,7 @@ public class RobotMap {
         driveTraingyro = new Gyro(0);
         LiveWindow.addSensor("DriveTrain", "gyro", driveTraingyro);
         driveTraingyro.setSensitivity(0.007);
-        driveTrainrangeFinder = new Ultrasonic(4, 5);
+        driveTrainrangeFinder = new AnalogInput(1);
         LiveWindow.addSensor("DriveTrain", "rangeFinder", driveTrainrangeFinder);
         
         armsarmSolenoid = new DoubleSolenoid(0, 0, 1);      

@@ -40,7 +40,7 @@ public class  DriveForwardRangeFinder extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.driveTrain.getRangeFinder().getRangeInches() < .5;
+        return Robot.driveTrain.getDistance() < .5;
     }
 
     // Called once after isFinished returns true
