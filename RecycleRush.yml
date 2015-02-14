@@ -104,7 +104,7 @@ Children:
     - Children: []
       Properties:
         Sensitivity: !!robotbuilder.data.properties.DoubleProperty {default: 0.007,
-          name: Sensitivity, validators: null, value: 0.007}
+          name: Sensitivity, validators: null, value: 0.0015}
         Input Channel (Analog): !!robotbuilder.data.properties.ChoicesProperty
           choices: ['0', '1']
           default: '0'

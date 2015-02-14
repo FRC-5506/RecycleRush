@@ -60,7 +60,7 @@ public class RobotMap {
         driveTrainwheelRotations.setPIDSourceParameter(PIDSourceParameter.kRate);
         driveTraingyro = new Gyro(0);
         LiveWindow.addSensor("DriveTrain", "gyro", driveTraingyro);
-        driveTraingyro.setSensitivity(0.007);
+        driveTraingyro.setSensitivity(0.0015);
         driveTrainrangeFinder = new AnalogInput(1);
         LiveWindow.addSensor("DriveTrain", "rangeFinder", driveTrainrangeFinder);
         

@@ -91,7 +91,7 @@ public class DriveTrain extends Subsystem {
     	return gyro;
     }
     
-    public double getDistance() {
+    public double getRangefinderDistance() {
     	// TODO: Scale voltage. This will need to be scaled by either
     	// inches/V or inches/mV.
     	// scaling reference: http://www.maxbotix.com/articles/016.htm
