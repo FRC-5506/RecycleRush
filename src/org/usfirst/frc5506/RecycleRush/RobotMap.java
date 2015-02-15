@@ -52,7 +52,8 @@ public class RobotMap {
         driveTrainMotors.setExpiration(0.1);
         driveTrainMotors.setSensitivity(0.5);
         driveTrainMotors.setMaxOutput(1.0);
-        
+        driveTrainMotors.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
+        driveTrainMotors.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);        
 
         driveTrainwheelRotations = new Encoder(2, 3, false, EncodingType.k4X);
         LiveWindow.addSensor("DriveTrain", "wheelRotations", driveTrainwheelRotations);
