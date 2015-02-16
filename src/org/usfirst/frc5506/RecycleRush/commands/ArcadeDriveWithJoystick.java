@@ -12,6 +12,7 @@
 package org.usfirst.frc5506.RecycleRush.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc5506.RecycleRush.Robot;
 
@@ -36,9 +37,10 @@ public class  ArcadeDriveWithJoystick extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double forwardSpeed = Robot.oi.getJoystick().getY() * -1;
-    	double turningSpeed = Robot.oi.getJoystick().getX();
+    	double forwardSpeed = Robot.oi.getDriverJoystick().getY() * -1;
+    	double turningSpeed = Robot.oi.getDriverJoystick().getX();
     	Robot.driveTrain.drive(turningSpeed, forwardSpeed);
+        SmartDashboard.putNumber("Gyro", Robot.driveTrain.getGyro().getAngle());
     }
 
     // Make this return true when this Command no longer needs to run execute()
