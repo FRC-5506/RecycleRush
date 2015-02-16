@@ -92,11 +92,7 @@ public class DriveTrain extends Subsystem {
     }
     
     public double getRangefinderDistance() {
-    	try {
-    		return (((rangeFinder.getVoltage() / 1024) * 2) * 0.393701) * 12;
-    	} catch(NullPointerException e) {
-    		return 0;
-    	}
+    	return (((rangeFinder.getVoltage() / 1024) * 2) * 0.393701) * 12;
     }
 }
 
