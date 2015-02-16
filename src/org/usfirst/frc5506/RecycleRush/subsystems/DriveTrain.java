@@ -92,11 +92,7 @@ public class DriveTrain extends Subsystem {
     }
     
     public double getRangefinderDistance() {
-    	// TODO: Scale voltage. This will need to be scaled by either
-    	// inches/V or inches/mV.
-    	// scaling reference: http://www.maxbotix.com/articles/016.htm
-    	// HIGH PRIORITY
-    	return rangeFinder.getVoltage();
+    	return (((rangeFinder.getVoltage() / 1024) * 2) * 0.393701) * 12;
     }
 }
 
