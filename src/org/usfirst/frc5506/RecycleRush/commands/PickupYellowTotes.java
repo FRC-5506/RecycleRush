@@ -6,26 +6,32 @@ public class PickupYellowTotes extends CommandGroup{
 
 	public PickupYellowTotes() {
 		addSequential(new ElevatorCommand(true, false));
-		addSequential(new ElevatorCommand(true, true));
-		addSequential(new TurnCommand(true));
-		addSequential(new DriveAuto(true, 5));
-		//To do: set correct values for all DriveAuto
+		addSequential(new DriveAuto(true, 42));
 		addSequential(new TurnCommand(false));
-		addSequential(new DriveAuto(true, 5));
+		addSequential(new DriveAuto(true, 81));
 		addSequential(new TurnCommand(false));
-		addSequential(new DriveAuto(true, 5));
-		addSequential(new TurnCommand(true));
+		addSequential(new DriveAuto(true, 42));
 		addSequential(new ElevatorCommand(false, false));
-		addSequential(new ElevatorCommand(false, true));
 		addParallel(new ArmCommand(false));
 		addSequential(new ArmCommand(true));
+		//assuming that false means the arms open
 		addSequential(new ElevatorCommand(true, false));
-		addSequential(new ElevatorCommand(true, true));
+		addSequential(new DriveAuto(false, 42));
 		addSequential(new TurnCommand(true));
-		addSequential(new DriveAuto(true, 8));
+		addSequential(new DriveAuto(true, 81));
+		addSequential(new TurnCommand(false));
+		addSequential(new DriveAuto(true, 42));
 		addSequential(new ElevatorCommand(false, false));
-		addSequential(new ElevatorCommand(false, true));
+		addParallel(new ArmCommand(false));
+		addSequential(new ArmCommand(true));
+		addSequential(new DriveAuto(false, 42));
+		addSequential(new TurnCommand(true));
+		addSequential(new TurnCommand(true));
+		addSequential(new DriveAuto(true, 107));
+		addSequential(new ElevatorCommand(false, false));
 		addSequential(new ArmCommand(false));
+		addSequential(new DriveAuto(false, 36));
+		
 	}
 	
 }
