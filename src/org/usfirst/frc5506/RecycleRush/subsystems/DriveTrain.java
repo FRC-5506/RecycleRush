@@ -94,5 +94,13 @@ public class DriveTrain extends Subsystem {
     public double getRangefinderDistance() {
     	return rangeFinder.getVoltage();
     }
+    
+    public SpeedController getLeftMotor() {
+    	return leftMotor;
+    }
+    
+    public SpeedController getRightMotor() {
+    	return leftMotor;
+    }
 }
 
