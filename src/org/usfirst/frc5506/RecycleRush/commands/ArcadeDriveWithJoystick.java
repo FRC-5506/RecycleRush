@@ -41,6 +41,7 @@ public class  ArcadeDriveWithJoystick extends Command {
     	double turningSpeed = Robot.oi.getDriverJoystick().getX() * -1;
     	Robot.driveTrain.drive(forwardSpeed, turningSpeed);
         SmartDashboard.putNumber("Gyro", Robot.driveTrain.getGyro().getAngle());
+        SmartDashboard.putNumber("Encoder", Robot.driveTrain.getWheelRotations().getDistance());
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -5,7 +5,8 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class DriveToAutoZone extends CommandGroup {
 	
 	public DriveToAutoZone() {
-		addSequential(new DriveAuto(true, 9999)); //TODO: fix value
+		addSequential(new DriveForwardRangeFinder()); //TODO: fix value
+		addSequential(new ResetEncoder());
 	}
 
 }

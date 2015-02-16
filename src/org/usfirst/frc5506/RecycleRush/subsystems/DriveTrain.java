@@ -56,7 +56,7 @@ public class DriveTrain extends Subsystem {
     
     // Autonomous drive functions
     public void driveForward() {
-    	motors.arcadeDrive(1, 0);
+    	motors.arcadeDrive(0.5, 0);
     }
     
     public void driveBackwards() {
@@ -92,7 +92,7 @@ public class DriveTrain extends Subsystem {
     }
     
     public double getRangefinderDistance() {
-    	return (((rangeFinder.getVoltage() / 1024) * 2) * 0.393701) * 12;
+    	return rangeFinder.getVoltage();
     }
 }
 
