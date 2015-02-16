@@ -53,7 +53,7 @@ public class  DriveAuto extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.driveTrain.getWheelRotations().getDistance() == distanceToDrive;
+        return Robot.driveTrain.getWheelRotations().getDistance() < 0.5;
     }
 
     // Called once after isFinished returns true
