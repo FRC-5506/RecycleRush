@@ -53,14 +53,16 @@ public class  ElevatorCommand extends Command {
     protected void execute() {
     	if(isLifting) {
     		Robot.elevator.elevatorUp();
+    		setTimeout(2);
     	} else {
     		Robot.elevator.elevatorDown();
+    		setTimeout(2);
     	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return isDone;
+    	return isTimedOut();
     }
 
     // Called once after isFinished returns true
