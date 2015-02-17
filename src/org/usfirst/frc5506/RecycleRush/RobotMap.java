@@ -55,7 +55,7 @@ public class RobotMap {
 
         driveTrainwheelRotations = new Encoder(2, 3, false, EncodingType.k4X);
         LiveWindow.addSensor("DriveTrain", "wheelRotations", driveTrainwheelRotations);
-        driveTrainwheelRotations.setDistancePerPulse(0.167075);
+        driveTrainwheelRotations.setDistancePerPulse(0.2506125);
         driveTrainwheelRotations.setPIDSourceParameter(PIDSourceParameter.kRate);
         driveTraingyro = new Gyro(0);
         LiveWindow.addSensor("DriveTrain", "gyro", driveTraingyro);
