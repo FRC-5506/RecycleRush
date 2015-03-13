@@ -49,12 +49,20 @@ public class  DriveAuto extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.driveTrain.driveForward();
+    	if(forwards) {
+        	Robot.driveTrain.driveForward();
+    	} else {
+    		Robot.driveTrain.driveBackwards();
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.driveTrain.getWheelRotations().getDistance() * -1 > distanceToDrive;
+    	if(forwards) {
+            return Robot.driveTrain.getWheelRotations().getDistance() * -1 > distanceToDrive;
+    	} else {
+            return Robot.driveTrain.getWheelRotations().getDistance() * -1 < distanceToDrive;
+    	}
     }
 
     // Called once after isFinished returns true

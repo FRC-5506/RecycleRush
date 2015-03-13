@@ -11,10 +11,9 @@
 
 package org.usfirst.frc5506.RecycleRush.commands;
 
-import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.command.Command;
-
 import org.usfirst.frc5506.RecycleRush.Robot;
+
+import edu.wpi.first.wpilibj.command.Command;
 
 /**
  * @author Noah Howard
@@ -54,14 +53,16 @@ public class  ArmCommand extends Command {
     protected void execute() {
     	if(!moveIn) {
     		Robot.arms.moveOut();
+    		setTimeout(1);
     	} else {
     		Robot.arms.moveIn();
+    		setTimeout(1);
     	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return isTimedOut();
     }
 
     // Called once after isFinished returns true

@@ -57,9 +57,9 @@ public class  TurnCommand extends Command {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
     	if(turning) {
-    		return Robot.driveTrain.getGyro().getAngle() == 45;
+    		return Robot.driveTrain.getGyro().getAngle() == 90;
     	} else {
-    		return Robot.driveTrain.getGyro().getAngle() == -45;
+    		return Robot.driveTrain.getGyro().getAngle() == -90;
     	}
     }
 

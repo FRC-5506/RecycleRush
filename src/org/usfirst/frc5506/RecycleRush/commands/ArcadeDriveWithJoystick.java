@@ -37,8 +37,8 @@ public class  ArcadeDriveWithJoystick extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double forwardSpeed = Robot.oi.getDriverJoystick().getY() * -1;
-    	double turningSpeed = Robot.oi.getDriverJoystick().getX() * -1;
+    	double forwardSpeed = Robot.oi.getDriverJoystick().getY() * -.7;
+    	double turningSpeed = Robot.oi.getDriverJoystick().getX() * -.7;
     	Robot.driveTrain.drive(forwardSpeed, turningSpeed);
         SmartDashboard.putNumber("Gyro", Robot.driveTrain.getGyro().getAngle());
         SmartDashboard.putNumber("Encoder", Robot.driveTrain.getWheelRotations().getDistance());   
