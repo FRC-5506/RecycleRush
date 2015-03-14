@@ -11,10 +11,11 @@
 
 package org.usfirst.frc5506.RecycleRush.commands;
 
+import org.usfirst.frc5506.RecycleRush.Robot;
+
+import edu.wpi.first.wpilibj.Joystick.RumbleType;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
-import org.usfirst.frc5506.RecycleRush.Robot;
 
 /**
  * @author Noah Howard
@@ -39,6 +40,13 @@ public class  ArcadeDriveWithJoystick extends Command {
     protected void execute() {
     	double forwardSpeed = Robot.oi.getDriverJoystick().getY() * -1;
     	double turningSpeed = Robot.oi.getDriverJoystick().getX() * -1;
+    	if(Math.abs(Robot.oi.getDriverJoystick().getX()) > Math.abs(Robot.oi.getDriverJoystick().getY())) {
+        	Robot.oi.getDriverJoystick().setRumble(RumbleType.kLeftRumble, (float) Math.abs(Robot.oi.getDriverJoystick().getX()));
+        	Robot.oi.getDriverJoystick().setRumble(RumbleType.kRightRumble, (float) Math.abs(Robot.oi.getDriverJoystick().getX()));
+    	} else {
+        	Robot.oi.getDriverJoystick().setRumble(RumbleType.kLeftRumble, (float) Math.abs(Robot.oi.getDriverJoystick().getY()));
+        	Robot.oi.getDriverJoystick().setRumble(RumbleType.kRightRumble, (float) Math.abs(Robot.oi.getDriverJoystick().getY()));
+    	}
     	Robot.driveTrain.drive(forwardSpeed, turningSpeed);
         SmartDashboard.putNumber("Gyro", Robot.driveTrain.getGyro().getAngle());
         SmartDashboard.putNumber("Encoder", Robot.driveTrain.getWheelRotations().getDistance());   
