@@ -48,8 +48,7 @@ public class  ArcadeDriveWithJoystick extends Command {
         	Robot.oi.getDriverJoystick().setRumble(RumbleType.kRightRumble, (float) Math.abs(Robot.oi.getDriverJoystick().getY()));
     	}
     	Robot.driveTrain.drive(forwardSpeed, turningSpeed);
-        SmartDashboard.putNumber("Gyro", Robot.driveTrain.getGyro().getAngle());
-        SmartDashboard.putNumber("Encoder", Robot.driveTrain.getWheelRotations().getDistance());   
+        SmartDashboard.putNumber("Encoder", Robot.driveTrain.getWheelRotations().getDistance() * 1);
     }
 
     // Make this return true when this Command no longer needs to run execute()

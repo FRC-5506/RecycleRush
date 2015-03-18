@@ -20,11 +20,12 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc5506.RecycleRush.commands.*;
+import org.usfirst.frc5506.RecycleRush.parser.AutoParser;
 import org.usfirst.frc5506.RecycleRush.subsystems.*;
 
 public class Robot extends IterativeRobot {
 
-    Command autonomousCommand;
+    public Command autonomousCommand;
     SendableChooser autoChooser;
     CameraServer server;
 
@@ -67,7 +68,9 @@ public class Robot extends IterativeRobot {
         
         SmartDashboard.putData("Autonomous Mode Chooser", autoChooser);
         
-        autonomousCommand = new DriveToAutoZone();
+        autonomousCommand = new SitThere(); //If nothing else is chosen, choose this.
+        AutoParser parser = new AutoParser();
+        parser.parseFile("./auto.txt");
     }
 
     /**
