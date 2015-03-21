@@ -1,7 +1,6 @@
 package org.usfirst.frc5506.RecycleRush.subsystems;
 
 import org.usfirst.frc5506.RecycleRush.RobotMap;
-import org.usfirst.frc5506.RecycleRush.commands.ArcadeDriveWithJoystick;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;

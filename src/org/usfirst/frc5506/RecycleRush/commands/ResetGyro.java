@@ -3,7 +3,6 @@ package org.usfirst.frc5506.RecycleRush.commands;
 import org.usfirst.frc5506.RecycleRush.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class ResetGyro extends Command {
 	
