@@ -6,7 +6,7 @@ public class DriveToAutoZone extends CommandGroup {
 	
 	public DriveToAutoZone() {
 		addSequential(new ResetEncoder());
-		addSequential(new DriveAuto(true, 180));
+		addSequential(new DriveAuto(true, 120)); // With yellow tote: 180, w/o 120
 		addSequential(new ResetEncoder());
 	}
 
