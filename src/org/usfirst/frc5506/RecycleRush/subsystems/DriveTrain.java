@@ -54,10 +54,6 @@ public class DriveTrain extends Subsystem {
     	motors.arcadeDrive(forwardSpeed, turningSpeed);
     }
     
-    public void tankDriving(GenericHID leftStick, GenericHID rightStick) {
-    	motors.tankDrive(leftStick, rightStick);
-    }
-    
     // Autonomous drive functions
     public void driveForward() {
     	motors.arcadeDrive(0.6, 0);

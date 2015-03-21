@@ -12,8 +12,10 @@
 package org.usfirst.frc5506.RecycleRush.commands;
 
 import org.usfirst.frc5506.RecycleRush.Robot;
+import org.usfirst.frc5506.RecycleRush.RobotMap;
 
 import edu.wpi.first.wpilibj.Joystick.RumbleType;
+import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -47,6 +49,7 @@ public class  ArcadeDriveWithJoystick extends Command {
         	Robot.oi.getDriverJoystick().setRumble(RumbleType.kLeftRumble, (float) Math.abs(Robot.oi.getDriverJoystick().getY()));
         	Robot.oi.getDriverJoystick().setRumble(RumbleType.kRightRumble, (float) Math.abs(Robot.oi.getDriverJoystick().getY()));
     	}
+    	
     	Robot.driveTrain.drive(forwardSpeed, turningSpeed);
         SmartDashboard.putNumber("Encoder", Robot.driveTrain.getWheelRotations().getDistance() * 1);
     }
