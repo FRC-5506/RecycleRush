@@ -62,7 +62,6 @@ public class  TurnCommand extends Command {
     protected void execute() {
     	if(turning) {
     		Robot.driveTrain.softRightTurn();
-    		setTimeout(timeToTurn);
     	} else {
     		Robot.driveTrain.softLeftTurn();
     	}
@@ -70,7 +69,11 @@ public class  TurnCommand extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return isTimedOut();
+    	if(turning) {
+        	return Robot.driveTrain.getGyro().getAngle() > 90;
+    	} else {
+        	return Robot.driveTrain.getGyro().getAngle() > 90;
+    	}
     }
 
     // Called once after isFinished returns true
