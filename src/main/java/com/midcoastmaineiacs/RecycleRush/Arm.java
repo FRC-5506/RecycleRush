@@ -8,9 +8,6 @@ public class Arm extends Subsystem {
 	public DoubleSolenoid arms = new DoubleSolenoid(0, 0, 1);
 	public DoubleSolenoid lift = new DoubleSolenoid(0, 6, 7);
 
-	public DigitalInput armLimitSwitch = new DigitalInput(1);
-	public DigitalInput liftLimitSwitch = new DigitalInput(0);
-
 	/**
 	 * Set arm valve state
 	 * @param value kForward opens arms, kReverse closes them
